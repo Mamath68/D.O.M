@@ -1,9 +1,11 @@
+// import Cronos from "./Classes/Cronos";
+// import Random from "./Classes/random";
 // ********************timer********************
 
 //1)Select time html
 /**
-   First we have to select the elements of UI 
-   which will contain hours, minutes, seconds and centiseconds
+    First we have to select the elements of UI 
+    which will contain hours, minutes, seconds and centiseconds
 */
 let getHours = document.querySelector('.hours');
 let getMinutes = document.querySelector('.minutes');
@@ -172,4 +174,3 @@ for (let i = 1; i <= 10; i++) {
     })
 }
 shuffleChildren(board);
-
