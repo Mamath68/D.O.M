@@ -19,6 +19,7 @@ let minutes_time = 0;
 let seconds_time = 0;
 let centiseconds_time = 0;
 
+let timer = null;
 //Our chronometer object
 /**
 objects in javascript are the same as in other programming languages
@@ -76,7 +77,9 @@ let cronos = {
 
     //this =>is used in javascript to refer to the object name
     initialization() {
-        timer = setInterval(this.count, 10);
+        if (timer === null) {
+            timer = setInterval(this.count, 10);
+        }
     },
 
     stop() {
@@ -144,6 +147,7 @@ for (let i = 1; i <= 10; i++) {
         if (i == nb) {
             onclick = () => {
                 cronos.initialization();
+                // console.log("start");
             }
         }
         if (i == nb) {
@@ -154,6 +158,7 @@ for (let i = 1; i <= 10; i++) {
                 board.querySelectorAll(".box").forEach(function (box) {
                     showReaction("success", box);
                 })
+                cronos.stop();
             }
             nb++
         }
